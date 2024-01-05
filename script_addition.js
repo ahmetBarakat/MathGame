@@ -16,12 +16,23 @@ function fillOptions(min, max){
         opt.innerHTML = i;
         combobox.appendChild(opt);
     }
+
     let input = document.getElementById("answerinput");
     input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
             // document.getElementById("ckeckAnswerBtn").click();
             checkAnswer();
+        }
+    });
+
+    input.addEventListener("keyup", function(event) {
+        if (event.key !== "Enter") {
+            event.preventDefault();
+            let ln = input.value.length;
+            if (ln > 0){
+                input.value = input.value[ln-1] + input.value.substring(0, ln-1);
+            }
         }
     });
 }

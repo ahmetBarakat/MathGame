@@ -1,4 +1,4 @@
-var difficultyLevel = 10;
+var difficultyLevel = 1;
 var questiondict;
 var questionIndex = 0;
 var mistakeCounte = 0;
@@ -40,9 +40,10 @@ function startGame(){
     }
     gameStart = true;
     questionIndex = 0;
+    mistakeCounte = 0;
     numOfQuestion = document.getElementById("numOfQuestion").value;
     // console.log(numOfQuestion);
-    questiondict = makeQuestion(numOfQuestion, 5);
+    questiondict = makeQuestion(numOfQuestion, 4);
     // console.log(questiondict)
     hideQuestoinPanle(false);
     setFocusToAnswerInput();
@@ -74,22 +75,12 @@ function makeQuestion(num, multipler){
     let qdict = {}
     let primes = get_prime(max);
     while(counter < num){
-        let a = randint(max/2, max+1);
-        if(primes.includes(a)){
-            continue;
-        }
-        // console.log(`a: ${a}`)
-        let b = get_divisors(a);
-        let rand = randint(0, b.length);
-        // console.log(`b: ${b}`);
-        // console.log(`b.length: ${b.length}`);
-        // console.log(`rand: ${rand}`);
-        // console.log(`b[rand]: ${b[rand]}`);
-        let c = a/b[rand];
-        // console.log(`c: ${c}`);
-        let questionStr = `${a} / ${b[rand]}`;
+        let a = randint(max-multipler+1, max+1);
+        let b = randint(3, 13);
+        let c = a * b;
+        let questionStr = `${c} / ${b}`;
         if(!(questionStr in qdict)){
-            qdict[questionStr] = `${c}`;
+            qdict[questionStr] = `${a}`;
             counter++;
         }
     }

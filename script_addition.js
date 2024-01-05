@@ -40,6 +40,7 @@ function startGame(){
     }
     gameStart = true;
     questionIndex = 0;
+    mistakeCounte = 0;
     numOfQuestion = document.getElementById("numOfQuestion").value;
     // console.log(numOfQuestion);
     questiondict = makeQuestion(numOfQuestion, 5);

@@ -1,0 +1,9 @@
+.container {
+  margin:50px;
+  outline: solid 1px burlywood;
+  text-align: center;
+}
+
+.innerContainer {
+  text-align: center;
+}

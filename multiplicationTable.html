@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="myscripts.js"></script>
+        <title>Math Games</title>
+    </head>
+
+    <body onload="fillOptions(3, 12)">
+        <div class="container">
+            <h1>Multiblication Table</h1>
+            <br><br>
+            <button onclick="btn_difficulty_mode(1)">Easy Mode</button>
+            <button onclick="btn_difficulty_mode(2)">Medium Mode</button>
+            <button onclick="btn_difficulty_mode(3)">Hard Mode</button>
+            <br><br>
+            <!-- it is filled in js form body onload -->
+            <select id="numOfQuestion">
+            </select>
+            <button onclick="startGame()">Start Game</button>
+            <br><br>
+            <div id="questionPanle", class="innerContainer">
+                <h3 id="questionLabel"></h3>
+                <br><br>
+                <input id="answerinput" >
+                <button id = "ckeckAnswerBtn" onclick="checkAnswer()">Check Answer</button>
+                <h4 id="resultLabel"></h4>
+            </div>
+        </div>  
+        <br><br>
+        <button onclick="location.href = 'index.html'">Go To Home</button> 
+    </body>
+
+</html>
